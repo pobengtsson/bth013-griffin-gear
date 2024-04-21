@@ -5,21 +5,16 @@
       <v-toolbar-title>Fantasy Creatures Shop</v-toolbar-title>
       <v-spacer></v-spacer>
     </v-app-bar>
-
     <v-navigation-drawer v-model="drawer" app>
       <v-list dense>
         <v-list-item link :to="{ name: 'home' }">
-          <v-icon>
-            <v-icon>mdi-home</v-icon>
-          </v-icon>
+          <v-icon>mdi-home</v-icon>
           <v-list-item-content>
             <v-list-item-title>Home</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
         <v-list-item link :to="{ name: 'catalog' }">
-          <v-list-item-icon>
             <v-icon>mdi-book-open-page-variant</v-icon>
-          </v-list-item-icon>
           <v-list-item-content>
             <v-list-item-title>Catalog</v-list-item-title>
           </v-list-item-content>
@@ -37,11 +32,7 @@
   </v-app>
 </template>
 
-<script>
-export default {
-  name: 'App',
-  data: () => ({
-    drawer: false, // Controls the state of the navigation drawer
-  }),
-};
+<script setup>
+  import { ref } from 'vue'
+  const drawer = ref(false)
 </script>
