@@ -2,15 +2,15 @@
   <v-container fluid>
     <v-row justify="center">
       <v-col cols="12">
-        <v-carousel cycle height="80vh" hide-delimiter-background show-arrows-on-hover>
+        <v-carousel cycle height="80vh" hide-delimiters show-arrows="hover">
           <v-carousel-item v-for="(item, i) in carouselItems" :key="i">
-            <v-img :src="item.image" aspect-ratio="1" contain>
+            <v-img :src="item.image" aspect-ratio="1">
               <template v-slot:placeholder>
-                <v-row class="fill-height ma-0" align="center" justify="center">
+                <v-row class="fill-height ma-0" justify="center">
                   <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
                 </v-row>
               </template>
-              <v-row class="fill-height" align="bottom" justify="center">
+              <v-row class="fill-height" justify="center">
                 <v-col class="text-h4 white-text text-center" cols="8">
                   <div><strong>{{ item.title }}</strong></div>
                   <div>{{ item.description }}</div>

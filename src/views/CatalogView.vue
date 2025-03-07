@@ -9,7 +9,7 @@
           <v-card-subtitle class="pb-0">{{ creature.type }}</v-card-subtitle>
           <v-card-text class="text--primary">
             <div>{{ currency(creature.price) }}</div>
-            <v-chip small color="rarityColor(creature.rarity)" dark>{{ creature.rarity }}</v-chip>
+            <v-chip small :color="rarityColor(creature.rarity)" dark>{{ creature.rarity }}</v-chip>
           </v-card-text>
         </v-card>
       </v-col>
@@ -155,10 +155,11 @@ const creatures = [
       },
     ]
 
-function showDetails(creature) {
-      this.selectedCreature = creature;
-      this.detailsDialog = true;
-    }
+const showDetails = (creature) => {
+  Object.assign(selectedCreature, creature)
+  detailsDialog.value = true;
+}
+
 function currency(value) {
       const formatter = new Intl.NumberFormat('en-US', {
         style: 'currency',
@@ -167,12 +168,19 @@ function currency(value) {
       return formatter.format(value)
     }
 const rarityColor = (rarity) => {
-      switch (rarity.toLower()) {
-        case 'uncommon': return 'amber'
-        default:
-          return "amber"
-      }
-    }
+  switch (rarity.toLowerCase()) {
+    case 'common':
+      return 'grey';
+    case 'uncommon':
+      return 'green';
+    case 'rare':
+      return 'blue';
+    case 'very rare':
+      return 'purple';
+    default:
+      return 'grey';
+  }
+}
 </script>
 
 <style scoped>

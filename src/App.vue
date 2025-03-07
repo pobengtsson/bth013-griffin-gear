@@ -6,20 +6,16 @@
       <v-spacer></v-spacer>
     </v-app-bar>
     <v-navigation-drawer v-model="drawer" app>
-      <v-list dense>
+      <v-list>
         <v-list-item link :to="{ name: 'home' }">
           <v-icon>mdi-home</v-icon>
-          <v-list-item-content>
-            <v-list-item-title>Home</v-list-item-title>
-          </v-list-item-content>
+          <v-list-item-title>Home</v-list-item-title>
         </v-list-item>
         <v-list-item link :to="{ name: 'catalog' }">
-            <v-icon>mdi-book-open-page-variant</v-icon>
-          <v-list-item-content>
-            <v-list-item-title>Catalog</v-list-item-title>
-          </v-list-item-content>
+          <v-icon>mdi-book-open-page-variant</v-icon>
+          <v-list-item-title>Catalog</v-list-item-title>
         </v-list-item>
-      </v-list>
+        </v-list>
     </v-navigation-drawer>
 
     <v-main>
@@ -27,7 +23,7 @@
     </v-main>
 
     <v-footer fixed padless>
-      <v-col class="text-center">©2024 Fantasy Creatures Shop</v-col>
+      <v-col class="text-center">©2024-2025 Fantasy Creatures Shop</v-col>
     </v-footer>
   </v-app>
 </template>
